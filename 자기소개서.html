@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <title>gimchaerin - Welcome</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    img {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out; 
+    }
+
+    img.loaded {
+      opacity: 1; 
+    }
+  </style>
+
+</head>
+<body>
+  <h1><a href="자기소개서.html">자기소개서</a></h1>
+  <input type="button" value="dark" onclick="
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'lightgray';
+  ">
+  <input type="button" value="light"onclick="
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+  ">
+ <div id="grid">
+   <ol>
+     <li><a href="취미.html">취미</a></li>
+     <li><a href="호두마루.html">호두마루</a></li>
+   </ol>
+   <div id="본문">
+    <h2>안녕하세요</h2>
+    <p>안녕하세요!
+     <br>김채린입니다<br>
+     <br>부경대학교 시각디자인학과 <u>21학번</u>
+     <br>MBTI : intp 
+     <br>취미: 사진찍기, 궁금한거 뭐든 시도하기, 책읽기.. 혼자 집에서 놀기!
+     <br>특징: 휴학을 꽤 오래해서 학교 적응이 안됨
+     <br>모쪼록 잘 부탁드립니다^__^
+    </p>
+    <h3>이 웹사이트는 "김채린"을 소개하기 위해 만든 사이트입니다! 더 많은 정보를 원하시면 목차를 눌러주세요!</h3>
+    <img src=gim.jpg alt="gim">
+   </div>
+  </div> 
+<script src="javascript.js"></script>
+
+<script>
+  window.addEventListener('load', function() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(image => {
+      image.addEventListener('load', () => {
+        image.classList.add('loaded');
+      });
+
+      if (image.complete) {
+        image.classList.add('loaded');
+      }
+    });
+  });
+</script>
+
+<script>
+  const links = document.querySelectorAll('a');
+  
+  links.forEach(link => {
+    link.addEventListener('mouseover', () => {
+      link.style.color = 'gray';
+    });
+
+    link.addEventListener('mouseout', () => {
+      link.style.color = 'rgb(40, 40, 40)'; 
+    });
+  });
+</script>
+
+<script>
+window.onload = function() {
+  alert("김채린의 웹사이트, 처음 오셨네요!");
+};
+</script>
+</body>
+</html>

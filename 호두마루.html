@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <title>gimchaerin - Welcome</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+ 
+  <style>
+    img {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    img.loaded {
+      opacity: 1;
+    }
+  </style>
+  
+</head>
+<body>
+  <h1><a href="자기소개서.html">자기소개서</a></h1>
+  <input type="button" value="dark" onclick="
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'lightgray';
+  ">
+  <input type="button" value="light"onclick="
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+  ">
+  <div id="grid">
+   <ol>
+     <li><a href="취미.html">취미</a></li>
+     <li><a href="호두마루.html">호두마루</a></li>
+   </ol>
+
+   <div id="본문">
+     <h2>호두마루</h2>
+     <p> 호두마루는 제가 너무너무너무너___무! 사랑하는 저희 집 애기들 입니다!
+       <p><strong>호두</strong>:10살 푸들<br>특징:간식을 너무 좋아해서 조금 통통함</p>
+       <img src="호두.jpg">
+       <p><br><strong>마루</strong>:5살 고양이<br>특징:1000년에 한 번 나올까 말까 한 개냥이</p>
+       <img src="마루.jpg">
+     </p>
+     <p>너무너무 귀엽죠.. 솔직히 저보다 호두마루를 소개하고 싶었어요..ㅎㅎ</p>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', function() {
+      const images = document.querySelectorAll('img');
+      
+      images.forEach(image => {
+        image.addEventListener('load', () => {
+          image.classList.add('loaded');
+        });
+
+        if (image.complete) {
+          image.classList.add('loaded');
+        }
+      });
+    });
+  </script>
+
+  <script>
+    const links = document.querySelectorAll('a');
+    
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.color = 'gray'; 
+      });
+  
+      link.addEventListener('mouseout', () => {
+        link.style.color = 'rgb(40, 40, 40)'; 
+      });
+    });
+  </script>
+</body>
+</html>
