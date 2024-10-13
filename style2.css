@@ -1,0 +1,141 @@
+/* 모든 요소에 margin, padding, box-sizing 적용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* 기본 바디 설정 */
+body {
+  background-color: rgb(190, 163, 127);
+}
+
+/* <ul>과 <li> 스타일 기본 설정 */
+#grid ul {
+  list-style: none; /* 불필요한 점 제거 */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+/* <li> 안의 링크 스타일을 <h2>와 동일하게 설정 */
+#grid li a {
+  font-family: 'Pretendard-Regular';
+  font-size: 13px; /* <h2>와 같은 크기 */
+  color: rgb(190, 163, 127); /* 동일한 색상 */
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  padding: 3px 0;
+}
+
+/* 링크 hover 효과 추가 */
+#grid li a:hover {
+  color: rgb(121, 105, 84);
+  text-decoration: underline;
+}
+
+/* 앱의 기본 스타일 */
+.app {
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto 0;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+/* 헤더 스타일 */
+.app h1 {
+  font-size: 25px;
+  color: rgb(121, 105, 84);
+  font-weight: 600;
+  border-bottom: 1px solid #8b6e6e;
+  padding-bottom: 30px;
+  font-family: 'Pretendard-ExtraBold';
+}
+
+/* 퀴즈 컨테이너 스타일 */
+.quiz {
+  padding: 20px 0;
+}
+
+/* 퀴즈 질문 텍스트 스타일 */
+.quiz h2 {
+  font-family: 'Pretendard-Regular';
+  font-size: 18px;
+  color: rgb(190, 163, 127);
+  font-weight: 600; /* 혹은 400으로 변경 */
+}
+
+/* 버튼 스타일 */
+.btn {
+  background: #fff;
+  color: rgb(121, 105, 84);
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid rgb(190, 163, 127);
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* 버튼 hover 스타일 */
+.btn:hover:not([disabled]){
+  background: rgb(190, 163, 127);
+  color: #fff;
+}
+.btn:disabled{
+    cursor: no-drop
+}
+/* 다음 버튼 스타일 */
+#next-btn {
+  background: rgb(121, 105, 84);
+  color: #fff;
+  font-weight: 500;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* block으로 변경 */
+  text-align: center; /* 중앙 정렬 */
+}
+.correct {
+    background-color: rgb(90, 207, 90);
+    color: #fff;
+}
+
+.incorrect {
+    background-color: rgb(232, 100, 100);
+    color: #fff;
+}
+
+ @font-face {
+font-family: 'Pretendard-Regular';
+src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+font-weight: 400;
+font-style: normal;} 
+
+ @font-face {
+font-family: 'Pretendard-ExtraBold';
+src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+font-weight: 800;
+font-style: normal;}
+
+ @font-face {
+font-family: 'Pretendard-SemiBold';
+src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+font-weight: 600;
+font-style: normal;}
+
+ @font-face {
+font-family: 'Pretendard-Medium';
+src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+font-weight: 500;
+font-style: normal;}
