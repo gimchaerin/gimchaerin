@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+  <title>gimchaerin - Welcome</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    
+    img {
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    img.loaded {
+      opacity: 1;
+    }
+  </style>
+  
+</head>
+<body>
+   <h1><a href="index.html">자기소개서</a></h1>
+   <input type="button" value="dark" onclick="
+      document.querySelector('body').style.backgroundColor = 'black';
+      document.querySelector('body').style.color = 'lightgray';
+  ">
+  <input type="button" value="light"onclick="
+      document.querySelector('body').style.backgroundColor = 'white';
+      document.querySelector('body').style.color = 'black';
+  ">
+  <div id="grid">
+   <ol>
+    <li><a href="1.html">취미</a></li>
+    <li><a href="2.html">호두마루</a></li>
+   </ol>
+  
+   <div id="본문">
+    <h2>취미</h2>
+    <p>
+    저의 취미는 사진 촬영입니다! 여행이나 놀러나가면 항상 카메라를 가지고 다닙니다.
+    (우즈베키스탄에서 찍은 사진ㅎㅎ)
+    </p>
+    <div id="grid">
+      <img src="하늘.jpg" alt="Sky">
+      <img src="곤돌라.jpg" alt="Gondola">
+      <img src="풍경.jpg" alt="Landscape">
+    </div>
+
+    <script>
+      window.addEventListener('load', function() {
+        const images = document.querySelectorAll('img');
+        
+        images.forEach(image => {
+          image.addEventListener('load', () => {
+            image.classList.add('loaded');
+          });
+
+          if (image.complete) {
+            image.classList.add('loaded');
+          }
+        });
+      });
+    </script>
+    
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let slides = document.querySelectorAll("img");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1} 
+        slides[slideIndex-1].style.display = "block"; 
+        setTimeout(showSlides, 1500); 
+      }
+
+    </script>
+   </div>
+  </div>
+  <script>
+    const links = document.querySelectorAll('a');
+  
+    links.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.color = 'gray'; 
+      });
+  
+      link.addEventListener('mouseout', () => {
+        link.style.color = 'rgb(40, 40, 40)'; 
+      });
+    });
+  </script>
+</body>
+</html>
